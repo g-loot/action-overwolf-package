@@ -1,0 +1,10 @@
+name: 'action-upload-overwolf-release'
+description: 'Creates a overwolf opk from a given path to a folder'
+author: 'G-Loot'
+inputs:
+  path:
+    description: 'Path to Overwolf app folder; Default is current folder.'
+    default: ''
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
