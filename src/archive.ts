@@ -29,15 +29,15 @@ export async function zip(path: string): Promise<string> {
     const output = createWriteStream(zippath)
     const archive = archiver('zip')
 
-    archive.on('warning', function(err: Error) {
+    archive.on('warning', function (err: Error) {
       throw err
     })
 
-    archive.on('error', function(err: Error) {
+    archive.on('error', function (err: Error) {
       throw err
     })
 
-    output.on('close', function() {
+    output.on('close', function () {
       console.log(`${archive.pointer()} bytes written `)
       core.setOutput('zippath', zippath)
       core.setOutput('zipname', zipname)
